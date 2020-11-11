@@ -1,28 +1,54 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app" class="container">
+        <div class="row justify-content-md-center">
+            <NameSurname class="col-lg" id="name-surname"/>
+            <logo class="col-lg" id="logo"/>
+        </div>
+        <div class="row">
+            <icon class="col" id="icon"/>
+        </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import NameSurname from "./components/NameSurname";
+    import Logo from "./components/Logo";
+    import Icon from "./components/Icon";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            Icon,
+            Logo,
+            NameSurname
+        }
+    }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+    #app {
+        margin-top: 10vh;
+    }
+
+    @media screen and (max-width: 990px) {
+        #app {
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%)
+        }
+        #logo {
+            order: 1;
+            margin-bottom: 5%;
+        }
+        #name-surname {
+            order: 2;
+            margin-bottom: 5%;
+        }
+        #icon {
+            order: 3;
+            margin-bottom: 5%;
+        }
+    }
 </style>
